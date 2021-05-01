@@ -13,6 +13,10 @@ var app = new Vue({
     computed: {},
     methods: {
         getRepo:function () {
+            this.allRepos = null
+            this.totalRepos = 0
+            this.downloadedRepo = 0
+            this.nameRepos = []
             if (this.utente !== ''){
                 this.esito = 'Scaricando...'
                  axios.get('getRepos.php?user=' + this.utente)
