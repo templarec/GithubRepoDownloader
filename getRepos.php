@@ -11,7 +11,7 @@ if (isset($_GET['user'])) {
         'Authorization: '.$token.'',
     );
     $url = 'https://api.github.com/search/repositories?q=user:'.$user."&per_page=100";
-    $gitPath = $_GET['gitpath'];
+
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);

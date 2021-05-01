@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="master.css">
+    <title>Github Repo Downloader</title>
+</head>
+<body>
+    <div id="root">
+        <p>Questo script scarica tutte le repo di GitHub di un utente specificato</p>
+        <ol>
+            <li>
+                Installare git
+            </li>
+            <li>
+                incollare il percorso dove si trova l'eseguibile di git
+                (ovvero quello che vedresti da riga di comando)
+            </li>
+            <li>inserisci nome utente di GitHub</li>
+        </ol>
+        Percorso git:
+        <input v-model="gitPath" type="text">
+        nome utente:
+        <input v-model="utente" type="text" >
+        <input type="button" value="Scarica" @click="getRepo">
+        <h5 v-if="downloadedRepo > 0">{{downloadedRepo}} / {{totalRepos}} scaricate</h5>
+        <div v-if="downloadedRepo > 0" class="progress-bar">
+            <span class="bar" v-for="spark in downloadedRepo"></span>
+            <span>{{ (downloadedRepo / totalRepos * 100).toFixed(1)}} %</span>
+        </div>
+        <p v-if="downloadedRepo > 0 ">Sto scaricando la repo: {{currentRepo}}</p>
+        <p>I file verranno scaricati nella cartella /output nella root dove risiede index.html</p>
+        <p v-if="downloadedRepo > 0 "><a :href="'./output/'+utente">Repo dell'utente: {{utente}}</a></p>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.2.0/axios.min.js" integrity="sha512-QIsQNDM8hG/1Z3If8Zh2BcpQ79KL3ra1wVMVSliBjQfFMlWMA3tCSe6ZfTK9rw2Ag4hOQ4P5ZhQd4nQl2dMeog==" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</body>
+</html>
+
+
