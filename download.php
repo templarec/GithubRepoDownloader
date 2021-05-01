@@ -6,4 +6,4 @@ $gitPath = $_GET['gitpath'];
 $dir = 'output/'. $user . '/'. $repo;
 $command = $gitPath." clone " . "$repoUrl".' '. $dir;
 $risposta = shell_exec($command);
-echo $command;
+echo $risposta;
