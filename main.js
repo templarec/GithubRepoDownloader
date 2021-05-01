@@ -1,13 +1,6 @@
 var app = new Vue({
     el: '#root',
-    mounted () {
-        if (this.gitPath.indexOf('Program Files') > 0) {
-            this.gitPath = this.gitPath.split('Program Files').join('%PROGRAMFILES%');
-        }
-        console.log(this.gitPath)
-    },
-
-    data: {
+       data: {
         utente: '',
         gitPath: '/opt/homebrew/bin/git',
         esito: false,
@@ -56,7 +49,12 @@ var app = new Vue({
                     })
             })
 
+        },
+    normalizeWinPath: function () {
+        if (this.gitPath.indexOf('Program Files') > 0) {
+            this.gitPath = this.gitPath.split('Program Files').join('%PROGRAMFILES%');
         }
-
+        console.log(this.gitPath)
+    }
     }
 });

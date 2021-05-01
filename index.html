@@ -30,7 +30,7 @@
         Percorso git:
         <input v-model="gitPath" type="text">
         nome utente:
-        <input v-model="utente" type="text" >
+        <input v-model="utente" type="text" v-on:click="normalizeWinPath">
         <input type="button" value="Scarica" @click="getRepo">
         <h5 v-if="downloadedRepo > 0">{{downloadedRepo}} / {{totalRepos}} scaricate</h5>
         <div v-if="downloadedRepo > 0" class="progress-bar">
