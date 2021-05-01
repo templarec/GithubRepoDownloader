@@ -40,7 +40,7 @@ var app = new Vue({
             this.nameRepos.forEach((repo)=>{
 
                 const $apiDownload = `download.php?gitpath=${this.gitPath}&user=${this.utente}&repo=${repo.name}&repourl=${repo.clone_url}`
-
+                console.log($apiDownload)
                 axios.get($apiDownload)
                     .then((risposta)=>{
                         this.downloadedRepo++
