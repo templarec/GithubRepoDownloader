@@ -15,20 +15,11 @@
             <li>
                 Installare git
             </li>
-            <li>
-                incollare il percorso dove si trova l'eseguibile di git
-                (ovvero quello che vedresti da riga di comando)
-                <ol type="a">
-                    <li>
-                        Linux/Mac: digitare <code>which git</code> da terminale/bash e copiare il path restituito
-                    </li>
-                    <li>Windows: Boh</li>
-                </ol>
-            </li>
+
             <li>inserisci nome utente di GitHub</li>
         </ol>
-        Percorso git:
-        <input v-model="gitPath" type="text">
+<!--        Percorso git:
+        <input v-model="gitPath" type="text">-->
         nome utente:
         <input v-model="utente" type="text" v-on:click="normalizeWinPath">
         <input type="button" value="Scarica" @click="getRepo">
