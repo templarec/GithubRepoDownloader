@@ -29,7 +29,7 @@ var app = new Vue({
 
         },
         downloadRepo: function () {
-            this.downloadRepo = 0
+
             this.allRepos.items.forEach((item)=>{
                 const objRepo = {
                     name: item.name,
