@@ -1,5 +1,12 @@
 var app = new Vue({
     el: '#root',
+    mounted () {
+        if (this.gitPath.indexOf('Program Files') > 0) {
+            this.gitPath = this.gitPath.split('Program Files').join('%PROGRAMFILES%');
+        }
+        console.log(this.gitPath)
+    },
+
     data: {
         utente: '',
         gitPath: '/opt/homebrew/bin/git',
@@ -38,6 +45,7 @@ var app = new Vue({
                 this.nameRepos.push(objRepo)
             })
             this.nameRepos.forEach((repo)=>{
+
                 const $apiDownload = `download.php?gitpath=${this.gitPath}&user=${this.utente}&repo=${repo.name}&repourl=${repo.clone_url}`
 
                 axios.get($apiDownload)
