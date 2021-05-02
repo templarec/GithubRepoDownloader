@@ -16,10 +16,10 @@
             <li>Git</li>
             <li>cUrl</li>
         </ol>
-        Normalmente sono già installati se usi MAMP, per gli utenti Linux occorre installare almeno cUrl
+        <p>Normalmente sono già installati se usi MAMP, per gli utenti Linux occorre installare almeno cUrl</p>
 <!--        Percorso git:
         <input v-model="gitPath" type="text">-->
-        nome utente:
+        <span>Nome Utente GitHub:</span>
         <input v-model="utente" type="text" >
         <input type="button" value="Scarica" @click="getRepo">
         <h5 v-if="downloadedRepo > 0">{{downloadedRepo}} / {{totalRepos}} scaricate</h5>
