@@ -1,3 +1,7 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
 .progress-bar span.bar{
     display: inline-block;
     width: 20px;
